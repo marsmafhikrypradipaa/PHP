@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal 1 - Hitung Saldo Akhir</title>
+    <style>
+        /* --- 1. Pengaturan Dasar Halaman --- */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6; /* Latar belakang abu-abu muda */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Form ke tengah horizontal */
+            align-items: center; /* Form ke tengah vertikal */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* --- 2. Kontainer Form (Kartu) --- */
+        form {
+            background-color: #ffffff; /* Kartu putih */
+            padding: 30px 40px;
+            border-radius: 10px; /* Tepi melengkung */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+            width: 100%;
+            max-width: 450px; /* Lebar maksimum form */
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* --- 3. Grup Form (Label + Input) --- */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block; /* Label di atas input */
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* --- 4. Styling Input Fields --- */
+        input[type="text"],
+        input[type="number"] {
+            width: 100%; /* Lebar penuh kontainer */
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Agar padding tidak merusak lebar */
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Efek saat input di-klik (focus) */
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #007bff; /* Warna border biru */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Bayangan biru */
+        }
+
+        /* --- 5. Kontainer Tombol --- */
+        .button-container {
+            display: flex;
+            gap: 15px; /* Jarak antar tombol */
+            margin-top: 30px;
+        }
+
+        /* --- 6. Styling Tombol --- */
+        .tombol {
+            flex-grow: 1; /* Kedua tombol berbagi lebar */
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        .tombol:active {
+            transform: scale(0.98); /* Efek ditekan */
+        }
+
+        /* Tombol Submit (Utama) */
+        input[type="submit"].tombol {
+            background-color: #007bff; /* Biru */
+            color: white;
+        }
+
+        input[type="submit"].tombol:hover {
+            background-color: #0056b3; /* Biru lebih gelap */
+        }
+
+        /* Tombol Reset (Sekunder) */
+        input[type="reset"].tombol {
+            background-color: #f4f4f4; /* Abu-abu muda */
+            color: #555;
+            border: 1px solid #ccc;
+        }
+
+        input[type="reset"].tombol:hover {
+            background-color: #e0e0e0; /* Abu-abu lebih gelap */
+        }
+    </style>
+</head>
+<body>
+
+    <form action="proses-bunga.php" method="post">
+        <h2>Form Penghitung Saldo Akhir</h2>
+        
+        <div class="form-group">
+            <label for="saldo">Saldo Awal (Rp):</label>
+            <input type="number" id="saldo" name="saldo_awal" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="bunga">Besar Bunga Perbulan (%):</label>
+            <input type="text" id="bunga" name="bunga_bulanan" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="bulan">Lama Bulan:</label>
+            <input type="number" id="bulan" name="lama_bulan" required>
+        </div>
+        
+        <div class="button-container">
+            <input type="submit" name="submit" value="Hitung" class="tombol">
+            <input type="reset" value="Reset" class="tombol">
+        </div>
+    </form>
+
+</body>
+</html>
