@@ -1,5 +1,5 @@
 <?php
-$nilai = 50;
+$nilai = 10;
 if ($nilai > 50) {
     echo "Nilai lebih besar dari 50";
 } else {
